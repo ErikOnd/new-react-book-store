@@ -10,35 +10,30 @@ import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
 
 import fantasy from './data/fantasy.json'
-import { Component } from 'react'
+import { useState } from 'react'
 
-class App extends Component {
 
-  state = {
-    selectedBook: undefined
+const App = () => {
+
+  const [selectedBook, setSelectedBook] = useState(undefined)
+
+  const changeSelectedBook = (clickedBook) => {
+    console.log('test')
+    setSelectedBook(clickedBook)
   }
 
-  changeSelectedBook = (clickedBook) => {
-    this.setState({
-      selectedBook: clickedBook
-    })
-  }
+  return (
+    <Container>
+      <MyNav />
+      <MyJumbotron />
+      <Row>
+        <Col><BookList books={fantasy} newBook={changeSelectedBook} /></Col>
+        <Col><CommentArea bookAsin={selectedBook}></CommentArea></Col>
+      </Row>
 
-  render() {
-    return (
-      <Container>
-        <MyNav />
-        <MyJumbotron />
-        <Row>
-          <Col><BookList books={fantasy} newBook={this.changeSelectedBook} /></Col>
-          <Col><CommentArea bookAsin={this.state.selectedBook}></CommentArea></Col>
-        </Row>
-
-        <MyFooter />
-      </Container>
-    )
-  }
-
+      <MyFooter />
+    </Container>
+  )
 }
 
 export default App
