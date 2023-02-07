@@ -8,7 +8,7 @@ class SingleBook extends Component {
 
   selectBook = () => {
     this.setState({ selected: !this.state.selected })
-    //this.props.newBook(this.props.book.asin)
+    this.props.newBook(this.props.book.asin)
   }
 
 
