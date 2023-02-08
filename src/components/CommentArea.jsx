@@ -10,6 +10,11 @@ const CommentArea = (props) => {
   const [isLoading, setIsLoading] = useState(true)
   const [isError, setIsError] = useState(false)
 
+
+  const reloadComments = () => {
+    getData();
+  }
+
   const getData = async () => {
     try {
       let response = await fetch(
@@ -56,8 +61,8 @@ const CommentArea = (props) => {
     <div className="text-center">
       {isLoading && <Loading />}
       {isError && <Error />}
-      <AddComment asin={props.bookAsin} />
-      <CommentList commentsToShow={comments} />
+      <AddComment asin={props.bookAsin} reloadComments={reloadComments} />
+      <CommentList commentsToShow={comments} reloadComments={reloadComments} />
     </div>
   )
 }
