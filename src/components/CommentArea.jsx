@@ -39,11 +39,10 @@ const CommentArea = (props) => {
     }
   }
 
-
-  useEffect(() => {
-    getData()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  /* 
+    useEffect(() => {
+      getData()
+    }, []) */
 
 
   useEffect(() => {

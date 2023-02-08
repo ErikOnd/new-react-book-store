@@ -18,7 +18,6 @@ const App = () => {
   const [selectedBook, setSelectedBook] = useState(undefined)
 
   const changeSelectedBook = (clickedBook) => {
-    console.log('test')
     setSelectedBook(clickedBook)
   }
 

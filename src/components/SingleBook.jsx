@@ -5,6 +5,7 @@ const SingleBook = (props) => {
 
   const [selected, setSelected] = useState(false)
 
+
   const selectBook = () => {
     (selected === false ? setSelected(true) : setSelected(false))
     props.newBook(props.book.asin)

@@ -3,7 +3,7 @@ import { Button, ListGroup } from 'react-bootstrap'
 const SingleComment = ({ comment }) => {
   const deleteComment = async (asin) => {
     try {
-      let response = await fetch(
+      await fetch(
         'https://striveschool-api.herokuapp.com/api/comments/' + asin,
         {
           method: 'DELETE',
@@ -12,11 +12,6 @@ const SingleComment = ({ comment }) => {
           },
         }
       )
-      if (response.ok) {
-        alert('Comment was deleted successfully!')
-      } else {
-        alert('Error - comment was NOT deleted!')
-      }
     } catch (error) {
       alert('Error - comment was NOT deleted!')
     }

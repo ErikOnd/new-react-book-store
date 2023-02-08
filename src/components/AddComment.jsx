@@ -30,7 +30,6 @@ const AddComment = (props) => {
         }
       )
       if (response.ok) {
-        alert('Comment was sent!')
         setComment({
           comment: '',
           rate: 1,
